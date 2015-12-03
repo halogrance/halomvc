@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <display-name></display-name>	
+	<!-- spring入口 -->
+	<context-param>
+	    <param-name>contextConfigLocation</param-name>
+	    <param-value>classpath:conf/spring-mybatis.xml</param-value>
+	</context-param>
+	<listener>
+	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- log4j配置 -->
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>webApp.root</param-value>
+	</context-param>
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>classpath:conf/log4j.properties</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+	</listener> 
+  	
+  	<!-- springmvc入口 -->
+  <!-- 	servlet-name的111与111-servlet.xml对应（springMVC与springMVC-servlet.xml对应） -->
+  	<servlet>  
+        <servlet-name>springMVC</servlet-name>  
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
+        <!-- 设置加载顺序，负数表示只有选定才会加载，正数表示自动加载 -->
+        <load-on-startup>1</load-on-startup>  
+    </servlet>
+  
+    <servlet-mapping>  
+        <servlet-name>springMVC</servlet-name>  
+        <url-pattern>/</url-pattern>  
+    </servlet-mapping>
+
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+    <jsp-config>
+    <taglib>
+			<taglib-uri>/tagss</taglib-uri>
+			<taglib-location>/WEB-INF/util.tld</taglib-location>
+		</taglib>
+  <taglib>
+  <taglib-uri>/tags</taglib-uri>
+  <taglib-location>/WEB-INF/tld/util.tld</taglib-location>
+  </taglib>
+  </jsp-config>
+</web-app>

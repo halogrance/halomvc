@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+        <!-- 命名空间 -->
+    <typeAliases>
+         <typeAlias alias="User" type="cn.springmvc.model.User"/>
+         <typeAlias alias="Student" type="cn.springmvc.model.Student"/>
+         <typeAlias alias="Opr" type="cn.springmvc.model.TblOprInfo"/>
+    </typeAliases>
+ 
+ <plugins>
+ <plugin interceptor="cn.springmvc.intercepter.MyInterceptor">
+ <!-- <property name="prop1" value="33"></property>
+  <property name="prop2" value="44"></property> -->
+ </plugin>
+ </plugins>
+    <!-- 映射map -->
+    <mappers>
+    </mappers>
+</configuration>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.springmvc.dao.StudentDAO">
+
+<resultMap type="Student"  id="resultListstudent">
+		<id column="ID" property="id"/>
+		<result column="stuNo" property="stuNo"/>
+		<result column="stuQQ" property="stuQQ"/>	
+		<result column="stuName" property="stuName"/>
+		<result column="stuPro" property="stuPro"/>
+		<result column="create_at" property="createAt"/>
+		<result column="update_at" property="updateAt"/>
+	</resultMap> 
+	<select id="selectAllstu" resultType="Student">
+	select * from student
+	</select>
+	<select id="selectByParam" resultType="Student" parameterType="Student" >
+	select * from student where 1=1
+	<if test="stuNo != null">
+			and stuNo=#{stuNo,jdbcType=VARCHAR}
+		</if>
+		<if test="stuQQ != null">
+			and stuQQ=#{stuQQ,jdbcType=VARCHAR}
+		</if>
+		<if test="stuName != null">
+			and stuName LIKE CONCAT(CONCAT('%', #{stuName}), '%');
+		</if>
+		<if test="stuPro != null">
+			and stuPro=#{stuPro,jdbbcType=VARCHAR}
+		</if>
+		<if test="createAt != 0">
+			and create_at=#{createAt,jdbbcType=BIGINT}
+		</if>
+		<if test="updateAt != 0">
+			and update_at=#{updateAt,jdbbcType=BIGINT}
+		</if>
+	</select>
+	<delete id="deleteStun" parameterType="int" >
+	delete from student where id=#{id}
+	</delete>
+	<update id="updateStun" parameterType="User">
+	update student set stuName=#{stuName},create_at=#{createAt} where stuName=#{stuName}
+	</update>
+	<insert id="insertStun" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
+		insert into student(stuNo,stuName) values(#{stuNo},#{stuName})
+	</insert>
+</mapper>
