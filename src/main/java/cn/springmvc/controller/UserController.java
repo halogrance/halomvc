@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -48,13 +49,17 @@ public class UserController {
 		return mav;
 		
 	}
-	@RequestMapping(value = "student", method = RequestMethod.GET)
+	@RequestMapping(value = "student/login", method = RequestMethod.GET)
+	public String loginUser(){
+		return "login";
+	}
+	@RequestMapping(value = "/u/student", method = RequestMethod.GET)
 	public String getStudents(
 			ModelMap mm,
 			@RequestParam(value = "page", required = false, defaultValue = "0") int page,
 			@RequestParam(value = "size", required = false, defaultValue = "10") int size) {
 		Student stu =new Student();
-		List<Student> students = this.studentServiceImpl.selectByParam(stu);
+		List<Student> students =studentServiceImpl.selectByParam(stu);
 		if(students != null){
 			mm.put("students", PageUtil.studentPage(students, page, size));
 		}else{
@@ -69,5 +74,35 @@ public class UserController {
 		mm.put("totalCount", totalCount);
 		return "index";
 	}
+	@RequestMapping("reAdd")
+	public String reAdd() {
+		return "stuAdd";
+	}
+	@RequestMapping("regUser")
+	public String regUser() {
+		return "register";
+	}
+	@RequestMapping(value = "student", method = RequestMethod.POST)
+	public String postStudent(Student student) {
+		student.setCreateAt(System.currentTimeMillis());
+		this.studentServiceImpl.insertStu(student);
+		return "redirect:/u/student";
+	}
+//	@RequestMapping(value = "student/{id}", method = RequestMethod.POST)
+//	public String putStudent(Student student, @PathVariable int id) {
+//		student.setId(id);
+//		student.setUpdateAt(System.currentTimeMillis());
+//		this.studentServiceImpl.updateStu(student);
+//		return "redirect:/api/student";
+//	}
+//	@RequestMapping("student/edit/{id}")
+//	public String reEdit(ModelMap mm, @PathVariable int id) {
+//		Student stu =new Student();
+//		stu.setId(id);
+//		Student student = (Student)this.studentServiceImpl.selectByParam(stu).get(0);
+//		mm.put("student", student);
+//		mm.put("title", "studentEdit");
+//		return "stuEdit";
+//	}
 }
 

@@ -1,0 +1,313 @@
+/*---------------------样式重置---------------------------*/
+/*---------------响应式最小支持宽度540px----------------------*/
+body,
+html,
+img,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+p,
+em,
+span,
+a {
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 100%;
+}
+body {
+    font-family: 'Microsoft YaHei';
+    font-size: 62.5%;
+    width: 100%;
+    max-width: 1920px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+li {
+    list-style-type: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 1920px;
+}
+
+
+/*---------------------头部样式-------------------------*/
+.top{
+    height: 50px;
+}
+.im{
+    float: right;
+    line-height: 50px;
+}
+.top p {
+    font-size: 1.4em;
+    line-height: 50px;
+    color: #29b078;
+}
+.qq,
+.weixin {
+    padding-right: 16px;
+}
+/*-----------------------导航条----------------------------*/
+.header{
+    height: 100px;
+    background-color: #29B078;
+}
+.menubar {
+    border: none;
+    background-color: #29B078;
+}
+.navbar-header{
+    padding-top: 23px;
+    padding-bottom: 23px;
+    text-align: center;
+
+}
+.navbar-nav li{
+    padding: 0 10px;
+}
+.navbar-nav li a{
+    font-size: 1.602em;
+    color: #fff;
+    padding-top: 38px;
+    padding-bottom: 38px;
+}
+.menu li:hover{
+    border-bottom: 4px solid #fff;
+}
+.logo{
+    padding: 0;
+    line-height: 100px;
+}
+/*-------------------页面主体部分开始-----------------*/
+
+.sub {
+    font-size: 1.6em;
+    padding-top: 33px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #d0d6d9;
+}
+
+.sub-home {
+    color: #000;
+}
+
+.sub-job {
+    color: #29b078;
+}
+
+.group ul {
+    font-size: 1.4em;
+    border-bottom: 1px solid #d0d6d9;
+}
+
+.group ul li {
+    float: left;
+    padding: 4px;
+    list-style-type: none;
+    margin: 20px 26px 20px 0;
+}
+
+.group-all {
+    background: #29b078;
+}
+
+.direction {
+    margin-left: 2px;
+    margin-right: 87px;
+    color: #999;
+}
+
+
+/*----------------选择职业部分代码完成-------------------*/
+
+.allcard h2 {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    padding-right: 2px;
+    font-size: 1.6em;
+    border-bottom: 1px solid #d0d6d9;
+}
+.describe{
+    word-break: break-all;
+}
+
+/*---------------------------卡片部分的样式-----------------------*/
+.allcard h3{
+    font-weight: bold;
+}
+.card {
+    margin-top: 47px;
+    position: relative;
+}
+.glass{
+    padding-left: 30px;
+    padding-right: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 15px;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+    font-size: 1.6em;
+    color: #fff;  
+    display: none; 
+    z-index: 1;
+}
+.glass h4{
+    padding-top: 85px;
+    padding-bottom: 35px;
+    text-align: center;
+}
+.glass p{
+    text-indent: 2em;
+}
+.card:hover .glass{
+    display: block;
+}
+.cardtop {
+    border-bottom: 1px solid #d0d6d9;
+}
+
+.cardtop img {
+    float: left;
+    margin-top: 20px;
+    margin-left: 8px;
+    /*图片左边距*/
+    margin-right: 10px;
+    /*图片右边距*/
+    margin-bottom: 16px;
+}
+
+.cardtop h3 {
+    font-size: 1.6em;
+    padding-top: 32px;
+    padding-bottom: 18px;
+}
+
+.cardtop p {
+    font-size: 1.4em;
+    padding-right: 5px;
+}
+.li-on img,
+.li-tw img{
+    padding-left: 10px;
+}
+
+.cardmiddle-on span,
+.cardmiddle-tw span {
+    color: red;
+    padding-left: 14px;
+    /*可设百分比*/
+}
+.cardmiddle-on,.cardmiddle-tw,.cardfoot{
+        border-bottom: 1px solid #d0d6d9;
+}
+.li-on,.li-tw,.li-th,.li-fo{
+    padding-top: 11px;
+    padding-bottom: 12px;
+}
+.li-on,
+.li-th {
+    border-right: 1px solid #d0d6d9;
+}
+.money{
+    border-right: 1px solid #d0d6d9;
+}
+
+.cardfoot-l{
+    border-right: 1px solid #d0d6d9;
+}
+.cardfoot p {
+    padding-top: 45px;
+    padding-bottom: 46px;
+    text-align: center;
+}
+.card-f-l,.card-f-r {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d0d6d9;
+}
+.card-f-r {
+    text-align: right;
+}
+.cardbottom-on{
+        border-bottom: 1px solid #d0d6d9;
+}
+.cardbottom-on h4 {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    font-size: 1.2em
+}
+
+.cardbottom-tw p {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.cardbottom-on span {
+    color: red;
+}
+.cardtop,.cardmiddle-on,.cardmiddle-tw,.cardfoot,.cardbottom-on,.cardbottom-tw{
+    margin-right: 1px;
+    border-left: 1px solid #d0d6d9;
+    border-right: 1px solid #d0d6d9;
+    border-bottom: 1px solid #d0d6d9;   
+}
+.cardtop{
+    border-top: 1px solid #d0d6d9;
+}
+/*-------------------------底部样式开始-----------------------------------*/
+
+.footer {
+    color: #fff;
+    background-color: #29b078;
+    margin-top:232px; 
+}
+.erweima p{
+    white-space:nowrap;
+}
+.erweima img{
+    padding-bottom: 50px;
+}
+.information p {
+    font-size: 1.6em;
+    padding-top: 37px;
+}
+
+.information span {
+    font-size: 1.4em;
+    display: inline-block;
+    padding-top: 24px;
+}
+.weblink {
+    display:block;
+    padding-top: 10px;
+    padding-right: 0;
+}
+.weblink a{
+    padding-right: 20px;
+    font-size: 1.3em;
+}
+.bottom {
+    font-size: 1.2em;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    border-top: 1px solid #fff;
+    background-color: #29b078;
+}

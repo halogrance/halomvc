@@ -1,0 +1,263 @@
+/*---------------------样式重置---------------------------*/
+
+body,
+html,
+div,
+img,
+ul,
+li,
+h1,
+h2,
+h3,
+p,
+em,
+span,
+a {
+    margin: 0;
+    padding: 0;
+
+}
+html{
+    font-size: 100%;
+}
+body {
+    font-family: 'Microsoft YaHei';
+    font-size: 62.5%;
+    width: 100%;
+    max-width: 1920px;
+}
+li{
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+    list-style-type: none;
+    color: #fff;
+}
+
+.clear {
+    clear: both;
+}
+
+.wrap {
+    width: 100%;
+    max-width: 1920px;
+}
+/*---------------------头部样式-------------------------*/
+
+.header {
+    width: 100%;
+}
+
+.top {
+    width: 1200px;
+    margin: 0 auto;
+}
+@media(max-width: 1220px){
+    .top{
+        width: 90%;
+    }
+}
+.top p {
+    font-size: 1.4em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #29b078;
+}
+
+.top img {
+    float: right;
+    padding-top: 7px;
+}
+
+.qq,
+.weibo {
+    padding-right: 16px;
+}
+
+.job-img img {
+    width: 100%;
+    max-width: 1920px;
+}
+
+.menu {
+    width: 100%;
+    background-color: #29b078;
+}
+
+.menu ul {
+    width: 1200px;
+    margin: 0 auto;
+    list-style: none;
+    position: relative;
+}
+@media(max-width: 1220px){
+    .menu ul{
+        width: 90%;
+        height: 102px;
+    }
+}
+.menu li {
+    float: right;
+}
+
+.menu li a {
+    font-size: 1.602em;
+    display: inline-block;
+    padding: 39px 33px;
+}
+.menu img{
+    position: absolute;
+    top: 40px;
+    right: 30px;
+    display: none;
+}
+.menu li a:hover {
+    border-bottom: 4px solid #fff;
+}/*鼠标经过时显示下边框*/
+.mbmenu{
+    width: 100%;
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+.mbmenu li{
+    width: 100%;
+    padding-top:15px;
+    padding-bottom: 15px; 
+    background: #1169EE;
+    text-align: center;
+    border-bottom:1px solid gray; 
+    font-size: 2em;
+}
+@media(max-width: 990px){
+    .menu ul li{
+    display: none;
+    }
+    .menu img{
+        display: inherit;
+        cursor: pointer;
+    }
+}
+.recomend {
+    border-bottom: 4px solid #fff;
+}
+/*---------------------求职页主体部分的样式-------------------*/
+.sub{
+    font-size: 1.6em;
+    padding-top: 33px;
+    padding-bottom: 30px;
+}
+.sub-home{
+    color: #000;
+}
+.sub-job{
+    color: #29b078;
+}
+.link-partner{
+    margin-bottom: 40px;
+}
+.link-partner h1{
+    font-size: 1.6em;
+    text-align: center;
+    padding-top: 22px;
+    padding-bottom: 25px;
+    border: 1px solid #e6e6e6;
+}
+.link-partner ul{
+    font-size: 1.4em;
+    padding-left: 20%;
+    border: 1px solid #e6e6e6;
+    border-top: none;
+    padding-left: 35%;
+}
+.link-partner li img{
+    padding-right: 7px;
+}
+.link-partner li{
+    padding-top: 38px;
+    color: #29b078;
+    list-style-type: none;
+}
+.link-end{
+    padding-bottom: 38px;
+}
+.link-content{
+    border: 1px solid #e6e6e6; 
+}
+.link-content p{
+    text-indent: 2em;
+    line-height: 28px;
+}
+.l-c-top{
+    padding-left: 69px;
+    padding-right: 68px;
+    padding-top: 26px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.l-c-top-img{
+    width: 153px;
+    height: 98px;
+    margin-right: 4px;
+    float: left;
+    text-align: center;
+    display: table;
+}
+.l-c-top-img span{
+    display: table-cell;
+    vertical-align: middle;
+}
+.l-c-top p{
+    font-size: 1.4em;
+    color: #b5b5b5;
+}
+.l-c-main{
+    padding-left: 63px;
+    padding-right: 73px;
+    padding-top: 28px;
+    color: #b5b5b5;
+}
+.l-c-main p{
+    font-size: 1.4em;
+    color: #b5b5b5;
+    padding-bottom: 47px;
+
+}
+/*-------------------------底部样式开始-----------------------------------*/
+.footer {
+    width: 100%;
+    color: #fff;
+    background-color: #29b078;
+    margin-top:232px; 
+}
+.erweima{
+    min-width: 125px;
+}
+.erweima img{
+    padding-bottom: 50px;
+}
+.information p {
+    font-size: 1.6em;
+    padding-top: 37px;
+    white-space: nowrap;
+}
+.about span {
+    font-size: 1.4em;
+    display: inline-block;
+    padding-top: 24px;
+}
+.pttenglink a {
+/*    float: left;*/
+    display: inline-block;
+    padding-top: 30px;
+    padding-right: 35px;
+}
+.bottom {
+    font-size: 1.2em;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    border-top: 1px solid #fff;
+    background-color: #29b078;
+}

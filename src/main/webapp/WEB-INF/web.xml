@@ -5,6 +5,12 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <display-name></display-name>	
+    <welcome-file-list>
+    <welcome-file>/WEB-INF/jsp/login.jsp</welcome-file>
+  </welcome-file-list>
+<!--   <welcome-file-list>
+		<welcome-file>api/student</welcome-file>
+	</welcome-file-list> -->
 	<!-- spring入口 -->
 	<context-param>
 	    <param-name>contextConfigLocation</param-name>
@@ -32,18 +38,35 @@
         <servlet-name>springMVC</servlet-name>  
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
         <!-- 设置加载顺序，负数表示只有选定才会加载，正数表示自动加载 -->
-        <load-on-startup>1</load-on-startup>  
+        <init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:conf/springMVC-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
     </servlet>
   
     <servlet-mapping>  
         <servlet-name>springMVC</servlet-name>  
         <url-pattern>/</url-pattern>  
     </servlet-mapping>
-
   
-  <welcome-file-list>
-    <welcome-file>index.jsp</welcome-file>
-  </welcome-file-list>
+<!-- <filter>
+<filter-name>AutoLoginFilter</filter-name>
+<filter-class>cn.springmvc.filter.AutoLoginFilter</filter-class>
+</filter>
+<filter-mapping>
+<filter-name>AutoLoginFilter</filter-name>
+<url-pattern>/u</url-pattern>
+</filter-mapping> -->
+
+<filter>
+<filter-name>RedirectFilter</filter-name>
+<filter-class>cn.springmvc.filter.RedirectFilter</filter-class>
+</filter>
+<filter-mapping>
+<filter-name>RedirectFilter</filter-name>
+<url-pattern>/u/*</url-pattern>
+</filter-mapping>
     <jsp-config>
     <taglib>
 			<taglib-uri>/tagss</taglib-uri>

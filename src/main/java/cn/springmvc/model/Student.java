@@ -8,6 +8,14 @@ private String stuName;
 private String stuPro;
 private long createAt;
 private long updateAt;
+private int password;
+
+public int getPassword() {
+	return password;
+}
+public void setPassword(int password) {
+	this.password = password;
+}
 public int getId() {
 	return id;
 }

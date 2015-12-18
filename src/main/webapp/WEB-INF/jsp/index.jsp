@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="header.jsp"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib uri="/tagss" prefix="date"%>
+<%@ taglib uri="/tags" prefix="date"%>
 <script src="${path}/script/jquery.pagination-2.2.js"></script>
 <script src="${path}/script/jquery.pagination.bs3render.js"></script>
 <script src="${path}/script/cg-data-list-option.js"></script>
@@ -28,9 +28,9 @@
 				items_per_page : pagesize
 			// Show only one item per page
 			});
-			$("#modal-click").click(function() {
+			/* $("#modal-click").click(function() {
 				$("#tip_modal").modal();
-			});
+			}); */
 		});
 	}(window.jQuery);
 </script>
@@ -39,7 +39,7 @@
 	<div class="row">
 		<div class="col-xs-12 col-sm-10 col-md-10 col-lg-10">
 			<ol class="breadcrumb">
-				<li><a href="${path}/api/student/">首页</a></li>
+				<li><a href="${path}/student/">首页</a></li>
 				<li class="active">student</li>
 			</ol>
 			<div class="page-header">
@@ -47,7 +47,7 @@
 					<small>student列表</small>
 				</h1>
 			</div>
-			<div class="btn-group cg-data-list-option hidden">
+			<%-- <div class="btn-group cg-data-list-option hidden">
 				<a data-href="${path}/api/student/" class="btn btn-info btn-xs">
 					<span class="glyphicon glyphicon-info-sign"></span>&nbsp;查看
 				</a> <a data-href="${path}/api/student/edit/"
@@ -56,9 +56,9 @@
 				</a> <a class="btn btn-danger btn-xs" data-href="${path}/api/student/">
 					<span class="glyphicon glyphicon-remove"></span>&nbsp;删除
 				</a>
-			</div>
+			</div> --%>
 
-			<div id="tip_modal" class="modal fade">
+			<!-- <div id="tip_modal" class="modal fade">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -76,14 +76,14 @@
 								data-dismiss="modal">取消</button>
 						</div>
 					</div>
-					<!-- /.modal-content -->
+					/.modal-content
 				</div>
-				<!-- /.modal-dialog -->
-			</div>
+				/.modal-dialog
+			</div> -->
 			<!-- /.modal -->
 			<!-- visible if after add/delete/edit operation -->
 			<div class="btn-group">
-				<a href="${path}/api/reAdd" data-param="page"
+				<a href="${path}/reAdd" data-param="page"
 					class="cg-auto-param btn btn-sm btn-primary"> <span
 					class="glyphicon glyphicon-plus"></span>新增数据
 				</a>
@@ -110,7 +110,7 @@
 							<td>${stu.stuName}</td>
 							<td>${stu.stuNo}</td>
 							<td>${stu.stuQQ}</td>
-							<td><date:substr value="${stu.stuPro}" /></td>
+							<td>${stu.stuPro}</td>
 							<td><date:date value="${stu.createAt}" /></td>
 							<td><date:date value="${stu.updateAt}" /></td>
 							<td></td>

@@ -24,18 +24,26 @@ public void before(){
 public void addStu(){
 	Student stu=new Student();
 	stu.setStuName("233333");
+	stu.setCreateAt(new Date().getTime());
+	stu.setStuNo("3");
+	stu.setStuQQ("333222");
+	stu.setUpdateAt(333);
+	stu.setId(7);;
+	stu.setStuPro("2");
 	studentService.insertStu(stu);
 }
 @Test
 public void deleteStu(){
-	studentService.deleteStu(2);
+	studentService.deleteStu(4);
 }
 @Test
 public void updateStu(){
 	Student stu=new Student();
 	//long������ʱ�����ֱ��new date().gettime���Ի�ȡ
+	stu.setId(3);
 	stu.setCreateAt(new Date().getTime());
-	stu.setStuName("nama");
+	stu.setStuName("na");
+	stu.setStuNo("2");
 	studentService.updateStu(stu);
 }
 @Test

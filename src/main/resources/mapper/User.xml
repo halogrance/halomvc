@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.springmvc.dao.UserDAO">
+
+<resultMap type="User"  id="resultListstudent">
+		<id column="ID" property="id"/>
+		<result column="UserName" property="UserName"/>
+		<result column="UserPass" property="UserPass"/>	
+		<result column="UserPass2" property="UserPass2"/>
+	</resultMap> 
+	<select id="selectAllstu" resultType="Student">
+	select * from student
+	</select>
+	<select id="login" resultType="int" parameterType="User" >
+	select count(*) from user where 1=1
+	<if test="UserName != null">
+			and UserName=#{UserName,jdbcType=VARCHAR}
+		</if>
+		<if test="UserPass != null">
+			and UserPass=#{UserPass,jdbcType=VARCHAR}
+		</if>
+		<if test="UserPass2 != null">
+			and UserPass2=#{UserPass2,jdbcType=VARCHAR}
+		</if>
+	</select>
+	<select id="CheckLogin" resultType="User" parameterType="User" >
+	select * from user where 1=1
+	<if test="UserName != null">
+			and UserName=#{UserName,jdbcType=VARCHAR}
+		</if>
+		<if test="UserPass != null">
+			and UserPass=#{UserPass,jdbcType=VARCHAR}
+		</if>
+		<if test="UserPass2 != null">
+			and UserPass2=#{UserPass2,jdbcType=VARCHAR}
+		</if>
+	</select>
+	<update id="updateUser" parameterType="User">
+	update user 
+	<set>
+	<if test="UserName != null">
+			UserName=#{UserName,jdbcType=VARCHAR},
+		</if>
+		<if test="UserPass != null">
+			UserPass=#{UserPass,jdbcType=VARCHAR},
+		</if>
+		<if test="UserPass2 != null">
+			UserPass2=#{UserPass2,jdbcType=VARCHAR},
+		</if>
+		<if test="loginTime != null">
+			loginTime=#{loginTime,jdbcType=VARCHAR},
+		</if>
+		<if test="registerTime != 0">
+			registerTime=#{registerTime,jdbcType=BIGINT},
+		</if>
+	</set>
+	where UserName=#{UserName,jdbcType=BIGINT}
+	</update>
+		<insert id="register" parameterType="User">
+		insert into
+		User(UserName,UserPass,UserPass2,loginTime,registerTime)
+		values(#{UserName,jdbcType=VARCHAR},#{UserPass,jdbcType=VARCHAR},#{UserPass2,jdbcType=VARCHAR},
+		#{loginTime,jdbcType=VARCHAR},#{registerTime,jdbcType=VARCHAR});
+	</insert>
+	<!-- <insert id="insertStun" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
+		insert into student(stuNo,stuName) values(#{stuNo},#{stuName})
+	</insert> -->
+</mapper>

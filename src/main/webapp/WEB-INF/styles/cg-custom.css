@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/**
+ *
+ * @authors Black Lotus (wu@fishlab.org)
+ * @date    2014-10-06 13:49:18
+ * @version $Id$
+ */
+body{
+	font-family:
+	"YaHei Consolas Hybrid",
+	"Helvetica Neue","Helvetica","Microsoft Yahei",
+	"Hiragino Sans GB","WenQuanYi Micro Hei","sans-serif";
+}
+main{
+ 	min-height: 580px;
+ 	padding-top: 70px;
+}
+[class*="cg-form-"] {
+	padding: 15px 15px 15px;
+}
+.cg-form-header{
+	border-radius: 4px 4px 0 0;
+	border: 1px #DDD solid;
+	border-bottom: none;
+}
+.cg-form-body {
+	border: 1px #DDD solid;
+}
+
+.cg-form-footer{
+	background: #F7F7F9;
+	border-radius: 0 0 4px 4px;
+	border: 1px #DDD solid;
+	border-top:none;
+}
+.cg-data-desc .btn{
+	margin: 0px 0px 15px 0px;
+}

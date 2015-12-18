@@ -29,22 +29,49 @@
 			and stuName LIKE CONCAT(CONCAT('%', #{stuName}), '%');
 		</if>
 		<if test="stuPro != null">
-			and stuPro=#{stuPro,jdbbcType=VARCHAR}
+			and stuPro=#{stuPro,jdbcType=VARCHAR}
 		</if>
 		<if test="createAt != 0">
-			and create_at=#{createAt,jdbbcType=BIGINT}
+			and create_at=#{createAt,jdbcType=BIGINT}
 		</if>
 		<if test="updateAt != 0">
-			and update_at=#{updateAt,jdbbcType=BIGINT}
+			and update_at=#{updateAt,jdbcType=BIGINT}
 		</if>
 	</select>
 	<delete id="deleteStun" parameterType="int" >
 	delete from student where id=#{id}
 	</delete>
-	<update id="updateStun" parameterType="User">
-	update student set stuName=#{stuName},create_at=#{createAt} where stuName=#{stuName}
+	<update id="updateStun" parameterType="Student">
+	update student 
+	<set>
+	<if test="stuNo != null">
+			stuNo=#{stuNo,jdbcType=VARCHAR},
+		</if>
+		<if test="stuQQ != null">
+			stuQQ=#{stuQQ,jdbcType=VARCHAR},
+		</if>
+		<if test="stuName != null">
+			stuName=#{stuName,jdbcType=VARCHAR},
+		</if>
+		<if test="stuPro != null">
+			stuPro=#{stuPro,jdbcType=VARCHAR},
+		</if>
+		<if test="createAt != 0">
+			create_at=#{createAt,jdbcType=BIGINT},
+		</if>
+		<if test="updateAt != 0">
+			update_at=#{updateAt,jdbcType=BIGINT},
+		</if>
+	</set>
+	where id=#{id,jdbcType=BIGINT}
 	</update>
-	<insert id="insertStun" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
-		insert into student(stuNo,stuName) values(#{stuNo},#{stuName})
+		<insert id="insertStun" parameterType="Student">
+		insert into
+		student(stuNo,stuQQ,stuName,stuPro,create_at,update_at)
+		values(#{stuNo,jdbcType=VARCHAR},#{stuQQ,jdbcType=BIGINT},#{stuName,jdbcType=VARCHAR},
+		#{stuPro,jdbcType=VARCHAR},#{createAt,jdbcType=BIGINT},#{updateAt,jdbcType=BIGINT});
 	</insert>
+	<!-- <insert id="insertStun" parameterType="Student" useGeneratedKeys="true" keyProperty="id">
+		insert into student(stuNo,stuName) values(#{stuNo},#{stuName})
+	</insert> -->
 </mapper>
